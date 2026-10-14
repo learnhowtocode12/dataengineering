@@ -1,0 +1,8 @@
+# Secrets: never publish
+notes/creds.md
+
+# Website build artifacts
+website/node_modules/
+website/build/
+website/.docusaurus/
+website/docs-ds/
