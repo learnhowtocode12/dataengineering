@@ -94,18 +94,36 @@
 
 .mock-option__status,
 .mock-question__feedback,
-.mock-question__explanation {
+.mock-question__explanation,
+.mock-question__submit {
   display: none;
 }
 
-.mock-question:has(input:checked) .mock-option__status {
+.mock-question:has(input:checked):not(.is-submitted) .mock-question__submit {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.85rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 4px;
+  color: var(--ifm-color-primary-darkest);
+  background: var(--ifm-background-surface-color);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mock-question__submit:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.mock-question.is-submitted .mock-option__status {
   display: inline;
   font-size: 0.85rem;
   font-weight: 600;
 }
 
-.mock-question:has(input:checked) .mock-question__feedback,
-.mock-question:has(input:checked) .mock-question__explanation {
+.mock-question.is-submitted .mock-question__feedback,
+.mock-question.is-submitted .mock-question__explanation {
   display: block;
 }
 
@@ -117,12 +135,12 @@
   color: #9e3030;
 }
 
-.mock-question:has(input:checked) .mock-option--correct {
+.mock-question.is-submitted .mock-option--correct {
   border-color: #26845b;
   background: rgb(38 132 91 / 8%);
 }
 
-.mock-question:has(input:checked) .mock-option--incorrect:has(input:checked) {
+.mock-question.is-submitted .mock-option--incorrect:has(input:checked) {
   border-color: #c24949;
   background: rgb(194 73 73 / 8%);
 }

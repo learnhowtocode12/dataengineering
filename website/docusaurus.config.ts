@@ -31,6 +31,7 @@ const config: Config = {
   projectName: 'dataengineering',
 
   onBrokenLinks: 'throw',
+  clientModules: ['./src/client/mock-question-interactions.ts'],
 
   // Source markdown is plain CommonMark (contains <details>, raw < and { characters).
   markdown: {
