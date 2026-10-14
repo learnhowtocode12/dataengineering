@@ -1,30 +1,50 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #147a68;
+  --ifm-color-primary-dark: #126e5e;
+  --ifm-color-primary-darker: #116858;
+  --ifm-color-primary-darkest: #0e5649;
+  --ifm-color-primary-light: #168775;
+  --ifm-color-primary-lighter: #198f7c;
+  --ifm-color-primary-lightest: #20a18b;
+  --ifm-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ifm-heading-font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ifm-heading-font-weight: 700;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-navbar-height: 4.25rem;
+  --ifm-footer-background-color: #102b36;
+  --docusaurus-highlighted-code-line-bg: rgb(20 122 104 / 10%);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #77d7bd;
+  --ifm-color-primary-dark: #5bcdae;
+  --ifm-color-primary-darker: #4bc7a5;
+  --ifm-color-primary-darkest: #2dbb94;
+  --ifm-color-primary-light: #93e1cc;
+  --ifm-color-primary-lighter: #a3e6d4;
+  --ifm-color-primary-lightest: #c4f0e5;
+  --ifm-background-color: #101b20;
+  --ifm-background-surface-color: #15252a;
+  --ifm-navbar-background-color: #132329;
+  --ifm-footer-background-color: #0b1519;
+  --docusaurus-highlighted-code-line-bg: rgb(119 215 189 / 15%);
+}
+
+.navbar {
+  box-shadow: 0 1px 0 var(--ifm-color-emphasis-200);
+}
+
+.footer {
+  border-top: 1px solid rgb(255 255 255 / 8%);
+}
+
+::selection {
+  color: #102b36;
+  background: #a7ead7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
