@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import preprocessPdeMockQuestions from './src/remark/remark-pde-mock-questions';
 
 // Each tab is its own docs instance; markdown is read in place from the source folders.
 const defaultExclude = [
@@ -34,6 +35,7 @@ const config: Config = {
   // Source markdown is plain CommonMark (contains <details>, raw < and { characters).
   markdown: {
     format: 'detect',
+    preprocessor: preprocessPdeMockQuestions,
     hooks: {onBrokenMarkdownLinks: 'warn'},
   },
 
