@@ -3,7 +3,7 @@
 ## Interview Guide
 Dataproc "coding" questions are mostly about cluster/job operational commands and Airflow operator
 config, since the transformation logic itself is just PySpark (see
-[../pyspark/coding.md](../pyspark/coding.md)). Expect `gcloud` CLI snippets and Airflow operator config.
+[../pyspark/coding](../pyspark/coding.md)). Expect `gcloud` CLI snippets and Airflow operator config.
 
 ---
 
@@ -21,7 +21,7 @@ gcloud dataproc clusters create nightly-etl-cluster \
 ```
 **Talk through:** primary workers stay on standard VMs (stability for HDFS/shuffle-critical roles),
 secondary workers use Spot for cost — matches the preemptible-risk discussion in
-[guide.md](guide.md) Q3.
+[guide](guide.md) Q3.
 
 ---
 

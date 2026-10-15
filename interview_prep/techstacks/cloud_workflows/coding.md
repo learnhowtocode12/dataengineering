@@ -35,7 +35,7 @@ main:
 ```
 **Talk through:** `auth: {type: OIDC}` is how Workflows authenticates to a Cloud Run service securely
 (service-to-service identity token) instead of an API key — reuse this point from
-[../cloud_workflows/guide.md](../cloud_workflows/guide.md) Q4.
+[../cloud_workflows/guide](../cloud_workflows/guide.md) Q4.
 
 ---
 

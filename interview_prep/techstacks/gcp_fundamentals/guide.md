@@ -1,6 +1,6 @@
 # GCP Fundamentals — Interview Guide & Q&A
 > **Round mapping:** R2 (technical deep dive). This file covers general, service-agnostic GCP topics —
-> for BigQuery specifically, see [../bigquery/guide.md](../bigquery/guide.md).
+> for BigQuery specifically, see [../bigquery/guide](../bigquery/guide.md).
 
 ## Interview Guide
 These are the "general GCP" questions that come up independent of any single service: choosing the right
@@ -13,9 +13,10 @@ etc. specifically.
 ## Q&A
 
 **Q1: Compare BigQuery, Bigtable, Cloud Spanner, Cloud SQL, and Firestore — when would you pick each?**
-A:
+
+**Answer:**
 - **BigQuery**: petabyte-scale analytical (OLAP) SQL, batch/ad hoc analytics, BI. See
-  [../bigquery/guide.md](../bigquery/guide.md) for the deep dive.
+  [../bigquery/guide](../bigquery/guide.md) for the deep dive.
 - **Bigtable**: massive-scale, low-latency NoSQL for time-series/IoT/high-throughput key-value with wide
   rows, not for ad hoc SQL analytics.
 - **Cloud Spanner**: globally distributed, strongly consistent relational DB needing horizontal scale with
@@ -25,9 +26,10 @@ A:
 - **Firestore**: flexible-schema NoSQL for mobile/web app backends, document model, real-time sync.
 
 **Q2: Describe IAM best practices for a GCP data platform.**
-A: Principle of least privilege via predefined roles (e.g., `roles/bigquery.dataViewer`, `dataEditor`,
+
+**Answer:** Principle of least privilege via predefined roles (e.g., `roles/bigquery.dataViewer`, `dataEditor`,
 `jobUser`) scoped at dataset/resource level rather than project-wide; use service accounts (not user
-creds) for pipelines with Workload Identity (from GKE — see [../gke/guide.md](../gke/guide.md)) or
+creds) for pipelines with Workload Identity (from GKE — see [../gke/guide](../gke/guide.md)) or
 attached service accounts (Cloud Run/Functions) instead of downloaded keys; use IAM Conditions for
 time/attribute-bound access; group-based IAM bindings (Google Groups) instead of per-user bindings for
 maintainability; and authorized views/datasets to expose curated data without granting underlying table

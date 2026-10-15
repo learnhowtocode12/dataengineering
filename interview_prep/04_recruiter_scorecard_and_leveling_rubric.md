@@ -55,7 +55,7 @@ These push toward **Strong No Hire** even if the technical rounds were excellent
 
 ## 4. Green Flags (What Tips Lean Hire → Strong Hire)
 - Headline-first answers that respect the interviewer's time (see
-  [00_interview_guide_overview.md](00_interview_guide_overview.md) section 4).
+  [00_interview_guide_overview](00_interview_guide_overview.md) section 4).
 - Unprompted mention of trade-offs, failure modes, cost, or security — shows the candidate thinks in
   systems, not just features.
 - Quantified impact in almost every story (%, $, hours saved, scale handled).

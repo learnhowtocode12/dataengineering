@@ -3,7 +3,7 @@
 ## Interview Guide
 These are the classic, dialect-agnostic SQL interview questions (ANSI/Postgres-style syntax) that show up
 regardless of warehouse — distinct from the BigQuery-dialect problems in
-[../bigquery/coding.md](../bigquery/coding.md). Expect these in a general
+[../bigquery/coding](../bigquery/coding.md). Expect these in a general
 technical screen, sometimes before the interviewer even knows your warehouse background. State the schema/
 assumptions out loud before writing the query.
 
@@ -93,7 +93,7 @@ GROUP BY t1.id
 HAVING MIN(t2.id) > t1.id + 1;
 ```
 **Talk through:** this is deliberately more involved than the BigQuery `GENERATE_ARRAY` version in
-[../bigquery/coding.md](../bigquery/coding.md) Q11 — use it to show you can
+[../bigquery/coding](../bigquery/coding.md) Q11 — use it to show you can
 reason in plain ANSI SQL when a convenient dialect-specific function isn't available, then mention you'd
 prefer the simpler `GENERATE_ARRAY`/`generate_series` version when the engine supports it.
 
@@ -177,7 +177,7 @@ WHERE order_date >= '2026-01-01' AND order_date < '2027-01-01';
 **Talk through:** rewriting as a sargable range predicate (no function wrapping the column) lets the
 optimizer use an index seek on `order_date` directly — this is the general-SQL version of the same
 "don't wrap the partition column in a function" point made for BigQuery in
-[../bigquery/coding.md](../bigquery/coding.md) Q13.
+[../bigquery/coding](../bigquery/coding.md) Q13.
 
 ---
 

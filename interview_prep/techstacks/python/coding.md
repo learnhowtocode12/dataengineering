@@ -61,8 +61,8 @@ def revenue_by_category(sales: list[dict]) -> list[tuple[str, float]]:
     return sorted(totals.items(), key=lambda kv: kv[1], reverse=True)
 ```
 **Follow-up:** "Top 3 per category instead of totals" — bridges naturally into the PySpark/SQL window
-function version (see [../pyspark/coding.md](../pyspark/coding.md) Q3 and
-[../bigquery/coding.md](../bigquery/coding.md)).
+function version (see [../pyspark/coding](../pyspark/coding.md) Q3 and
+[../bigquery/coding](../bigquery/coding.md)).
 
 ---
 
@@ -136,7 +136,7 @@ def merge_intervals(intervals: list[tuple[int, int]]) -> list[tuple[int, int]]:
     return merged
 ```
 **Complexity:** O(n log n) for the sort. **Follow-up:** directly connects to sessionization (Q14 in
-[../pyspark/guide.md](../pyspark/guide.md)) — "how would this generalize to per-user session gaps at
+[../pyspark/guide](../pyspark/guide.md)) — "how would this generalize to per-user session gaps at
 scale?" → window functions in Spark/SQL instead of a single-threaded merge.
 
 ---
@@ -157,7 +157,7 @@ min-heap of size k while streaming, or push the top-N down to BigQuery/Spark.
 
 ### Q8. Simple token-bucket rate limiter
 **Problem:** Implement a rate limiter allowing at most `rate` calls per `per_seconds` window (ties to the
-Cloud Tasks rate-limiting concept in [../cloud_tasks/guide.md](../cloud_tasks/guide.md)).
+Cloud Tasks rate-limiting concept in [../cloud_tasks/guide](../cloud_tasks/guide.md)).
 ```python
 import time
 
@@ -198,7 +198,7 @@ def diff_schema(old: dict, new: dict) -> dict:
     return {"added": added, "removed": removed, "type_changed": type_changed}
 ```
 **Why it matters:** directly maps to the schema-evolution discussion in
-[../bigquery/guide.md](../bigquery/guide.md) Q12 — a nice way to connect a coding answer to a real pipeline
+[../bigquery/guide](../bigquery/guide.md) Q12 — a nice way to connect a coding answer to a real pipeline
 concern.
 
 ---
@@ -260,7 +260,7 @@ def parse_logs(lines: list[str]) -> tuple[list[LogEvent], list[str]]:
     return good, bad
 ```
 **Why it matters:** mirrors the Beam dead-letter `ParDo` pattern (see
-[../dataflow/coding.md](../dataflow/coding.md) Q2) — good to explicitly say
+[../dataflow/coding](../dataflow/coding.md) Q2) — good to explicitly say
 "this is the same pattern I'd use with a `TaggedOutput` in a Beam `DoFn`."
 
 ---

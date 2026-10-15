@@ -2,7 +2,7 @@
 
 ## Interview Guide
 Graded on idempotent event handlers and knowing the memory/time limits of a Function so you recognize
-when a task has outgrown it. See [../cloud_run/coding.md](../cloud_run/coding.md) for shared
+when a task has outgrown it. See [../cloud_run/coding](../cloud_run/coding.md) for shared
 patterns (ADC auth, Dockerfile practices) that apply equally here once you're on Gen2/container-based
 Functions.
 
@@ -51,7 +51,7 @@ with blob.open("rb") as f:
 **Follow-up:** "What if even streaming isn't fast enough?" → this is the signal to say "I'd hand this off
 to Dataflow/Dataproc instead of trying to force it through a single Cloud Function invocation" — knowing
 when *not* to use serverless functions is itself the answer being tested. See
-[../dataflow/guide.md](../dataflow/guide.md).
+[../dataflow/guide](../dataflow/guide.md).
 
 ---
 
@@ -65,5 +65,5 @@ rows = client.query("SELECT 1").result()
 ```
 **Talk through:** a downloaded JSON key committed to a repo or baked into an image is a classic
 OWASP-style credential-exposure risk; ADC + attached service accounts avoids long-lived secrets entirely.
-Same pattern as [../cloud_run/coding.md](../cloud_run/coding.md) Q5 and
-[../gke/guide.md](../gke/guide.md) Q3 (Workload Identity) for GKE specifically.
+Same pattern as [../cloud_run/coding](../cloud_run/coding.md) Q5 and
+[../gke/guide](../gke/guide.md) Q3 (Workload Identity) for GKE specifically.

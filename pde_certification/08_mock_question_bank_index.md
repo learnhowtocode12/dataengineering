@@ -10,13 +10,13 @@ A bank of 550 scenario-style mock questions for the Google Cloud Professional Da
 ## Files & Coverage
 | File | Topic | Question range | Count |
 |---|---|---|---|
-| [09_mock_ingestion_processing.md](09_mock_ingestion_processing.md) | Pub/Sub, Dataflow, Dataproc, Data Fusion, Composer, transfer services | Q1–Q100 | 100 |
-| [10_mock_storage.md](10_mock_storage.md) | Cloud Storage, Bigtable, Spanner, Firestore, Cloud SQL, Memorystore | Q101–Q200 | 100 |
-| [11_mock_bigquery_deep_dive.md](11_mock_bigquery_deep_dive.md) | Partitioning, clustering, views, cost, schema design, pricing | Q201–Q275 | 75 |
-| [12_mock_analytics_ml.md](12_mock_analytics_ml.md) | BigQuery ML, Vertex AI, AutoML, pre-trained APIs, BI tools | Q276–Q350 | 75 |
-| [13_mock_security_compliance.md](13_mock_security_compliance.md) | IAM, service accounts, DLP, VPC-SC, encryption, compliance | Q351–Q425 | 75 |
-| [14_mock_reliability_ops_cost.md](14_mock_reliability_ops_cost.md) | Monitoring, RPO/RTO, idempotency, cost optimization, CI/CD, orchestration | Q426–Q500 | 75 |
-| [15_mock_case_studies_scenarios.md](15_mock_case_studies_scenarios.md) | Flowlogistic / MJTelco / TerramEarth-style end-to-end scenarios | Q501–Q550 | 50 |
+| [Ingesting and Processing (Q1–Q100)](09_mock_ingestion_processing.md) | Pub/Sub, Dataflow, Dataproc, Data Fusion, Composer, transfer services | Q1–Q100 | 100 |
+| [Storage (Q101–Q200)](10_mock_storage.md) | Cloud Storage, Bigtable, Spanner, Firestore, Cloud SQL, Memorystore | Q101–Q200 | 100 |
+| [BigQuery Deep Dive (Q201–Q275)](11_mock_bigquery_deep_dive.md) | Partitioning, clustering, views, cost, schema design, pricing | Q201–Q275 | 75 |
+| [Analytics and ML (Q276–Q350)](12_mock_analytics_ml.md) | BigQuery ML, Vertex AI, AutoML, pre-trained APIs, BI tools | Q276–Q350 | 75 |
+| [Security and Compliance (Q351–Q425)](13_mock_security_compliance.md) | IAM, service accounts, DLP, VPC-SC, encryption, compliance | Q351–Q425 | 75 |
+| [Reliability, Operations, and Cost (Q426–Q500)](14_mock_reliability_ops_cost.md) | Monitoring, RPO/RTO, idempotency, cost optimization, CI/CD, orchestration | Q426–Q500 | 75 |
+| [Case Study Scenarios (Q501–Q550)](15_mock_case_studies_scenarios.md) | Flowlogistic / MJTelco / TerramEarth-style end-to-end scenarios | Q501–Q550 | 50 |
 
 **Total: 550 questions**
 
