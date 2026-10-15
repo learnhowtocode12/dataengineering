@@ -1,5 +1,17 @@
 # Analyzing Data and Enabling Machine Learning
 
+<div class="pde-flow" role="img" aria-label="Machine learning lifecycle: prepare data and features, train and evaluate a model, deploy predictions, then monitor drift and quality">
+  <div class="pde-flow__node"><strong>Prepare</strong><small>Clean data and build features</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Train</strong><small>BigQuery ML or Vertex AI</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Evaluate</strong><small>Validate metrics and leakage</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Deploy</strong><small>Online endpoint or batch prediction</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Monitor</strong><small>Watch drift and serving quality</small></div>
+</div>
+
 ## 1. Analysis / BI Tools
 - **Looker Studio** (formerly Data Studio): free, lightweight dashboards/reports, connects to BigQuery, Sheets, GA, etc.
 - **Looker**: enterprise BI platform, semantic modeling layer (LookML), governed self-service analytics.

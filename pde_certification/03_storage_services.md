@@ -1,5 +1,15 @@
 # Storage Services — Choosing the Right One
 
+<div class="pde-choice" role="group" aria-label="Storage service decision guide">
+  <p class="pde-choice__question">Start with the access pattern and consistency requirement:</p>
+  <div class="pde-choice__branches">
+    <div class="pde-choice__branch"><strong>SQL analytics at scale</strong><br />BigQuery</div>
+    <div class="pde-choice__branch"><strong>Low-latency wide-column reads/writes</strong><br />Bigtable</div>
+    <div class="pde-choice__branch"><strong>Global relational transactions</strong><br />Cloud Spanner</div>
+    <div class="pde-choice__branch"><strong>Files, backups, or a data lake</strong><br />Cloud Storage</div>
+  </div>
+</div>
+
 ## Quick Decision Table
 | Requirement | Service |
 |---|---|
