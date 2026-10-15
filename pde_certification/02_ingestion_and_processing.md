@@ -1,5 +1,17 @@
 # Ingesting and Processing Data
 
+<div class="pde-flow" role="img" aria-label="Streaming ingestion pipeline: producers send events to Pub/Sub, Dataflow transforms them, BigQuery or Bigtable stores results, and Looker presents analytics">
+  <div class="pde-flow__node"><strong>Producers</strong><small>Apps, devices, databases</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Pub/Sub</strong><small>Buffer and decouple events</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Dataflow</strong><small>Window, transform, validate</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>BigQuery / Bigtable</strong><small>Analytics or low-latency serving</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Looker</strong><small>Dashboards and decisions</small></div>
+</div>
+
 ## 1. Batch vs Streaming
 | | Batch | Streaming |
 |---|---|---|

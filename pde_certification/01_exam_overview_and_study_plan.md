@@ -4,6 +4,14 @@ slug: /
 
 # Google Cloud Professional Data Engineer (PDE) — Exam Overview & Study Plan
 
+<div class="pde-flow" role="img" aria-label="PDE scenario-solving flow: identify requirements, choose an architecture, then validate operations and trade-offs">
+  <div class="pde-flow__node"><strong>Read the scenario</strong><small>Find the business goal and constraints</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Choose the pattern</strong><small>Match data shape, scale, and latency</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Check trade-offs</strong><small>Reliability, security, cost, and operations</small></div>
+</div>
+
 ## 1. Exam Basics
 - **Length**: 2 hours
 - **Format**: 50–60 multiple choice / multiple select questions

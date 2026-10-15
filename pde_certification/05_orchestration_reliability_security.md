@@ -1,5 +1,15 @@
 # Orchestration, Reliability, Security & Compliance
 
+<div class="pde-flow" role="img" aria-label="Reliable data workflow: a scheduler triggers orchestration, tasks run across data services, and monitoring feeds alerts and retries">
+  <div class="pde-flow__node"><strong>Trigger</strong><small>Cloud Scheduler or an event</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Orchestrate</strong><small>Composer DAG or Workflows</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Run tasks</strong><small>Dataflow, Dataproc, BigQuery</small></div>
+  <span class="pde-flow__arrow" aria-hidden="true">&rarr;</span>
+  <div class="pde-flow__node"><strong>Observe and recover</strong><small>Logs, alerts, retries, dead-letter queues</small></div>
+</div>
+
 ## 1. Orchestration
 - **Cloud Composer (Airflow)**: multi-service DAGs, scheduling, retries, dependency management, SLA monitoring. Use for complex cross-service workflows (e.g., Dataproc job → BigQuery load → notify → trigger ML pipeline).
 - **Workflows**: lightweight serverless orchestration for simpler HTTP/API-based service chaining (less overhead than Composer for simple cases).
