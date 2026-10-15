@@ -77,9 +77,9 @@ Read the official PDF case studies before the exam — questions assume familiar
 - Hands-on: build at least one end-to-end pipeline (Pub/Sub → Dataflow → BigQuery, plus a Dataproc Spark job, plus a Vertex AI model).
 
 ## 7. Files in this folder
-- `02_ingestion_and_processing.md` — pipelines, Pub/Sub, Dataflow, Dataproc, batch vs streaming
-- `03_storage_services.md` — Cloud Storage, BigQuery, Bigtable, Spanner, Firestore, SQL/Memorystore
-- `04_analytics_and_ml.md` — BigQuery ML, Vertex AI, AutoML, analysis/BI tools
-- `05_orchestration_reliability_security.md` — Composer, monitoring, IAM, DLP, compliance
-- `06_service_cheat_sheet.md` — quick decision matrix for "which GCP service do I pick"
-- `07_practice_questions.md` — practice Q&A with explanations
+- [Ingesting and Processing Data](02_ingestion_and_processing.md) — pipelines, Pub/Sub, Dataflow, Dataproc, batch vs streaming
+- [Storage Services](03_storage_services.md) — Cloud Storage, BigQuery, Bigtable, Spanner, Firestore, SQL/Memorystore
+- [Analytics and Machine Learning](04_analytics_and_ml.md) — BigQuery ML, Vertex AI, AutoML, analysis/BI tools
+- [Orchestration, Reliability, Security & Compliance](05_orchestration_reliability_security.md) — Composer, monitoring, IAM, DLP, compliance
+- [Service Decision Cheat Sheet](06_service_cheat_sheet.md) — quick decision matrix for "which GCP service do I pick"
+- [Practice Questions](07_practice_questions.md) — practice Q&A with explanations

@@ -177,4 +177,4 @@ def push_handler():
 **Why it's asked:** identical reasoning applies to a push subscription hosted on Cloud Run or Cloud
 Functions instead of this example's handler — interviewers like to see you recognize it's the same
 ack/nack-via-HTTP-status pattern regardless of which compute service hosts it (see
-[../cloud_run/coding.md](../cloud_run/coding.md) Q3).
+[../cloud_run/coding](../cloud_run/coding.md) Q3).

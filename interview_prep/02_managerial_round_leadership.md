@@ -1,10 +1,10 @@
-# Round 4: Managerial & Leadership Interview — Guide & Q&A
+# Managerial & Leadership Interview — Guide & Q&A
 
 ## Interview Guide
 This round is run by the **hiring manager** (or a senior manager from an adjacent team, for cross-calibration),
 usually 45-60 minutes, almost entirely behavioral. Unlike R1-R3, there's no "right answer" to look up — the
 hiring manager is pattern-matching your stories against the competency rubric in
-[04_recruiter_scorecard_and_leveling_rubric.md](04_recruiter_scorecard_and_leveling_rubric.md), specifically:
+[04_recruiter_scorecard_and_leveling_rubric](04_recruiter_scorecard_and_leveling_rubric.md), specifically:
 **ownership, scope, handling ambiguity, conflict/influence, mentorship, and delivering measurable results.**
 
 Most high-bar tech companies use some version of a published leadership-competency framework to structure
@@ -96,7 +96,7 @@ purity — this is what makes pushback land well instead of sounding obstructive
 > licensing cost."
 *If probed further:* the reconciliation/validation approach is usually the most impressive part to a
 hiring manager — it shows production-mindedness, not just "I can write a Spark job." See
-[techstacks/informatica_cloud/guide.md](techstacks/informatica_cloud/guide.md) Q5-Q10 for the full
+[techstacks/informatica_cloud/guide](techstacks/informatica_cloud/guide.md) Q5-Q10 for the full
 technical narrative to pull detail from.
 
 **Q7: Tell me about a time you had to make a decision with incomplete information.**
@@ -155,7 +155,7 @@ story, the migration framework you built).
 > **Headline:** "I want more exposure to early-stage architecture decisions rather than mostly execution,
 > and I want to go deeper on streaming/real-time patterns than my current team's needs have required."
 *Keep this forward-looking and specific — never negative about the current employer. See*
-[03_hr_final_round.md](03_hr_final_round.md) *for the fuller version of this question tailored to the HR
+[03_hr_final_round](03_hr_final_round.md) *for the fuller version of this question tailored to the HR
 round.*
 
 **Q15: What are you most proud of in your career so far?**

@@ -111,7 +111,7 @@ with beam.Pipeline(options=options) as p:
 ```
 **Talk through:** explicitly naming `STORAGE_WRITE_API` as the write method — call out that this is the
 modern, higher-throughput, lower-cost path versus legacy streaming inserts (ties back to
-[../bigquery/guide.md](../bigquery/guide.md) Q11).
+[../bigquery/guide](../bigquery/guide.md) Q11).
 
 ---
 

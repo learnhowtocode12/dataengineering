@@ -306,4 +306,4 @@ WHERE event_date BETWEEN '2026-10-01' AND '2026-10-07';
 ```
 **Talk through:** exact `COUNT(DISTINCT ...)` over billions of rows is expensive; HLL sketches trade a
 small, bounded error for the ability to merge pre-aggregated sketches across days/partitions without
-re-scanning raw history — directly reusable from [guide.md](guide.md) Q16.
+re-scanning raw history — directly reusable from [guide](guide.md) Q16.

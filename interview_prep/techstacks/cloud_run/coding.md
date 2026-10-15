@@ -2,8 +2,8 @@
 
 ## Interview Guide
 Graded on production-shaped container code: health checks, correct `PORT` handling, non-root containers,
-and Cloud Run Jobs' sharding model. See [../cloud_functions/coding.md](../cloud_functions/coding.md) and
-[../gke/coding.md](../gke/coding.md) for the equivalent patterns on the other two compute options.
+and Cloud Run Jobs' sharding model. See [../cloud_functions/coding](../cloud_functions/coding.md) and
+[../gke/coding](../gke/coding.md) for the equivalent patterns on the other two compute options.
 
 ---
 
@@ -59,13 +59,13 @@ if __name__ == "__main__":
 ```
 **Talk through:** Cloud Run Jobs run `task_count` parallel task instances, each knowing its own index —
 simple modulo sharding distributes work evenly; for very uneven file sizes, discuss hashing or a work-queue
-(Cloud Tasks — see [../cloud_tasks/coding.md](../cloud_tasks/coding.md)) pull model instead of static
+(Cloud Tasks — see [../cloud_tasks/coding](../cloud_tasks/coding.md)) pull model instead of static
 sharding.
 
 ---
 
 ### Q3. Pub/Sub push subscription handler with correct ack/nack semantics
-A full worked example lives in [../pubsub/coding.md](../pubsub/coding.md) Q8 — the same Flask/Cloud Run
+A full worked example lives in [../pubsub/coding](../pubsub/coding.md) Q8 — the same Flask/Cloud Run
 pattern (2xx acks, 5xx nacks and triggers redelivery) applies whether the push target is Cloud Run or
 Cloud Functions.
 
@@ -83,7 +83,7 @@ rows = client.query("SELECT 1").result()
 ```
 **Talk through:** explicitly state *why* this matters — a downloaded JSON key committed to a repo or
 baked into an image is a classic OWASP-style credential-exposure risk; ADC + attached service accounts
-avoids long-lived secrets entirely. See [../gke/guide.md](../gke/guide.md) Q3 for the GKE equivalent
+avoids long-lived secrets entirely. See [../gke/guide](../gke/guide.md) Q3 for the GKE equivalent
 (Workload Identity), which requires an extra KSA-to-GSA binding step that Cloud Run doesn't need.
 
 ---
@@ -104,4 +104,4 @@ CMD ["python", "main.py"]
 ```
 **Talk through:** building in a full image (with compilers available for packages that need them) and
 copying only the installed packages into a slim runtime image shrinks the final image size significantly —
-directly reduces Cloud Run cold-start time (see [../cloud_run/guide.md](../cloud_run/guide.md) Q3).
+directly reduces Cloud Run cold-start time (see [../cloud_run/guide](../cloud_run/guide.md) Q3).

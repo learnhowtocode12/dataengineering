@@ -5,7 +5,7 @@ Informatica PowerCenter is low-code, so "coding" here means **Expression Languag
 overrides, and — the highest-value exercise for this specific role — translating a described mapping into
 equivalent PySpark or BigQuery SQL.** That last category is the single best way to demonstrate the
 Informatica→GCP migration narrative live, so spend the most practice time there. See
-[../informatica_cloud/coding.md](../informatica_cloud/coding.md) for the IICS-side parameterization
+[../informatica_cloud/coding](../informatica_cloud/coding.md) for the IICS-side parameterization
 equivalent.
 
 ---
@@ -55,7 +55,7 @@ IIF(ISNULL(LKP_CURRENT_HASH) , 'INSERT',
 **Why this is a great interview answer:** hashing every tracked column into one value and comparing it
 against the stored hash on the current row avoids writing a brittle column-by-column `!=` chain for every
 tracked attribute, and it's exactly the same pattern used for the `attr_hash` column in the PySpark SCD2
-merge (see [../pyspark/coding.md](../pyspark/coding.md) Q5) — explicitly draw that connection in the
+merge (see [../pyspark/coding](../pyspark/coding.md) Q5) — explicitly draw that connection in the
 interview, it's a strong signal.
 
 ---
@@ -142,7 +142,7 @@ WHEN NOT MATCHED THEN
 **Talk through:** this completes the translation — SQL-expressible DML logic (Update Strategy) lands in
 BigQuery as a `MERGE`, while the row-level/procedural transformation logic (Expression, Router, Lookup)
 runs in PySpark, exactly matching the triage framework from
-[../informatica_cloud/guide.md](../informatica_cloud/guide.md) Q5.
+[../informatica_cloud/guide](../informatica_cloud/guide.md) Q5.
 
 ---
 

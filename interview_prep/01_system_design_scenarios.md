@@ -41,7 +41,8 @@ A candidate who nails the diagram but never volunteers a trade-off or a failure 
 
 **Q1: Design an end-to-end pipeline to ingest clickstream events (billions/day) and make them available
 for near-real-time dashboards and daily batch analytics.**
-A: **Ingestion**: client/app SDKs publish events to Pub/Sub (high-throughput, durable buffer, decouples
+
+**Answer:** **Ingestion**: client/app SDKs publish events to Pub/Sub (high-throughput, durable buffer, decouples
 producers from processing). **Streaming path**: a Dataflow (Beam) streaming pipeline reads from Pub/Sub,
 parses/validates (dead-letter malformed events to a separate topic/GCS path), applies windowed
 aggregations (e.g., 1-minute fixed windows for near-real-time counts) with watermarking/allowed lateness
@@ -58,7 +59,8 @@ upstream).
 
 **Q2: Design a system to migrate 50 nightly batch ETL jobs from an on-prem Informatica PowerCenter
 environment to GCP with minimal business disruption.**
-A: Inventory/classify all 50 mappings by complexity, data volume, source/target systems, and downstream
+
+**Answer:** Inventory/classify all 50 mappings by complexity, data volume, source/target systems, and downstream
 consumers. Stand up a landing zone: GCS buckets (raw, partitioned by date) and BigQuery staging datasets.
 Build a connectivity bridge first (IICS Secure Agent or Datastream/PowerExchange CDC) to replicate
 on-prem source data into GCS/BigQuery without touching transformation logic yet — this decouples
@@ -74,7 +76,8 @@ usually dominates.
 
 **Q3: A BigQuery table used by dozens of dashboards is becoming very expensive to query. Walk through
 your diagnosis and fix.**
-A: Check `INFORMATION_SCHEMA.JOBS_BY_PROJECT`/billing export for top queries by bytes billed — identify
+
+**Answer:** Check `INFORMATION_SCHEMA.JOBS_BY_PROJECT`/billing export for top queries by bytes billed — identify
 whether it's a few expensive ad hoc queries or broad high-frequency dashboard traffic. Check the table's
 partitioning/clustering against actual filter patterns in those queries (e.g., Looker-generated SQL) —
 missing partition pruning is the most common root cause. Consider `require_partition_filter=true` to force
@@ -87,7 +90,8 @@ source.
 
 **Q4: Design a pipeline for daily CDC ingestion from an on-prem Oracle database into BigQuery, handling
 inserts/updates/deletes, with a goal of <1 hour freshness.**
-A: Use a log-based CDC tool (Datastream, or Informatica PowerExchange/IICS CDC connector) to capture
+
+**Answer:** Use a log-based CDC tool (Datastream, or Informatica PowerExchange/IICS CDC connector) to capture
 row-level changes continuously rather than batch-extracting entire tables (minimizes source load, meets
 freshness SLA). Stream changes into a GCS staging area or directly into a BigQuery raw/staging table
 (append-only change log, including operation type and a source commit timestamp/LSN). A scheduled
@@ -99,7 +103,8 @@ availability) as the core freshness SLA metric, and alert if lag exceeds thresho
 
 **Q5: Design a cost-efficient architecture for a PySpark workload that runs once nightly but needs to
 process a rapidly growing data volume (10x over 2 years).**
-A: Use ephemeral Dataproc clusters created per job run (via Airflow `DataprocCreateClusterOperator`) sized
+
+**Answer:** Use ephemeral Dataproc clusters created per job run (via Airflow `DataprocCreateClusterOperator`) sized
 by an autoscaling policy bound to the job's typical data volume, with secondary workers as preemptible/
 Spot VMs for the bulk of compute cost savings, and primary workers as standard VMs for stability. Store
 input/output on GCS (not HDFS) so cluster lifecycle and storage scale independently — growing data volume
@@ -111,7 +116,8 @@ permanent.
 
 **Q6: A critical Airflow DAG intermittently fails at 2am and pages on-call. How do you approach root-
 causing and preventing recurrence?**
-A: Check Airflow task logs and the specific failing task's error (timeout, OOM, upstream data not ready,
+
+**Answer:** Check Airflow task logs and the specific failing task's error (timeout, OOM, upstream data not ready,
 transient API/network error). Check whether it correlates with a specific condition (e.g., larger data
 volume on certain days — month-end, weekends) suggesting a resource/timeout tuning issue vs a genuine data
 problem (e.g., a source file sometimes missing at scheduled time — needs a sensor/retry with backoff
@@ -123,7 +129,8 @@ prevent recurrence — and mention this is also a good behavioral story to have 
 
 **Q7: How would you design a data quality framework across this stack (BigQuery, Dataflow, Dataproc,
 Airflow)?**
-A: Define expectations (not-null, uniqueness, referential integrity, freshness, value ranges, row-count
+
+**Answer:** Define expectations (not-null, uniqueness, referential integrity, freshness, value ranges, row-count
 deltas vs historical trend) as declarative checks — either via a framework (e.g., Great Expectations,
 dbt tests if using dbt, or custom BigQuery assertion queries) run as an explicit Airflow task after each
 load/transform step, failing the DAG (or routing to a quarantine table) before bad data reaches curated/
@@ -133,7 +140,8 @@ in the pipeline is visible, not just assumed.
 
 **Q8: Design a multi-tenant data platform on GCP where each business unit has its own data but shares
 common infrastructure/tooling.**
-A: Separate BigQuery datasets (or projects) per business unit for data isolation and cost
+
+**Answer:** Separate BigQuery datasets (or projects) per business unit for data isolation and cost
 attribution/quota control, with a shared "common"/reference dataset (e.g., shared dimension tables,
 currency conversion, calendar) exposed via authorized views so BUs don't duplicate reference data.
 Shared orchestration (one Composer environment, or isolated per BU if noisy-neighbor/compliance concerns
@@ -145,7 +153,8 @@ guardrails — balances central governance with team autonomy.
 
 **Q9: How would you design disaster recovery / business continuity for a critical BigQuery-based
 reporting pipeline?**
-A: Identify RPO/RTO requirements first. Use BigQuery's built-in redundancy (multi-zone within a region) as
+
+**Answer:** Identify RPO/RTO requirements first. Use BigQuery's built-in redundancy (multi-zone within a region) as
 baseline; for regional-outage protection, consider cross-region dataset replication/scheduled exports to
 a secondary region's bucket/dataset, or at minimum ensure raw source data (GCS) is in a multi-region/
 dual-region bucket so pipelines can be replayed from raw data in a secondary region if needed. Keep
@@ -156,7 +165,8 @@ in DR design is untested runbooks.
 
 **Q10: Walk through how you'd approach a take-home or live "design a pipeline" prompt you've never seen
 before, in the first 2 minutes.**
-A: Resist jumping straight to a diagram. First restate the problem in your own words and ask 2-4 clarifying
+
+**Answer:** Resist jumping straight to a diagram. First restate the problem in your own words and ask 2-4 clarifying
 questions (data volume/velocity, latency SLA, existing infra constraints, team skill set/preferences,
 budget sensitivity). Then state assumptions explicitly if the interviewer doesn't have answers ("I'll
 assume batch daily volume of X, no sub-minute latency requirement — let me know if that's wrong").

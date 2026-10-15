@@ -116,7 +116,7 @@ result = to_expire.unionByName(to_insert, allowMissingColumns=True)
 ```
 **Talk through:** `attr_hash` is typically `F.md5(F.concat_ws("||", *tracked_cols))` computed on both
 sides — this mirrors the exact MD5-hash change-detection pattern used in Informatica PowerCenter (see
-[../informatica_powercenter/coding.md](../informatica_powercenter/coding.md) Q3),
+[../informatica_powercenter/coding](../informatica_powercenter/coding.md) Q3),
 a great bridge to mention live in an interview.
 
 ---
@@ -202,7 +202,7 @@ flat = (
 )
 ```
 **Follow-up:** "When would you *not* do this?" → when BigQuery consumers actually want the nested/repeated
-structure preserved (see [../bigquery/guide.md](../bigquery/guide.md) Q4) — flattening is a query-pattern
+structure preserved (see [../bigquery/guide](../bigquery/guide.md) Q4) — flattening is a query-pattern
 decision, not a default.
 
 ---

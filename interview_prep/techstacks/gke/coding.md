@@ -2,7 +2,7 @@
 
 ## Interview Guide
 Graded on correct Kubernetes resource definitions for data/ETL workloads and Workload Identity wiring —
-see [../cloud_run/coding.md](../cloud_run/coding.md) for the equivalent, simpler serverless-container
+see [../cloud_run/coding](../cloud_run/coding.md) for the equivalent, simpler serverless-container
 patterns.
 
 ---
@@ -31,7 +31,7 @@ spec:
 **Follow-up:** "Why a CronJob here instead of Cloud Scheduler + Cloud Run?" → you'd pick GKE if this job
 needs to live alongside other GKE workloads, needs a specific node pool (e.g., high-memory or GPU), or the
 org has standardized tooling/monitoring around GKE already — otherwise Cloud Run Jobs is simpler and has
-less infrastructure to maintain. See [../cloud_run/coding.md](../cloud_run/coding.md) Q2 for the Cloud Run
+less infrastructure to maintain. See [../cloud_run/coding](../cloud_run/coding.md) Q2 for the Cloud Run
 Job equivalent.
 
 ---
@@ -49,5 +49,5 @@ kubectl annotate serviceaccount etl-ksa \
 ```
 **Talk through:** this is the two-step binding (IAM policy binding + KSA annotation) that makes
 `serviceAccountName: etl-ksa` in Q1's CronJob able to call BigQuery/GCS APIs using the GSA's permissions
-without any key file — see [../gke/guide.md](../gke/guide.md) Q3 for why this matters (avoids long-lived
+without any key file — see [../gke/guide](../gke/guide.md) Q3 for why this matters (avoids long-lived
 keys).
